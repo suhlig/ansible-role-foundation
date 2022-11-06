@@ -22,3 +22,8 @@
           - 0.debian.pool.ntp.org
           - 1.debian.pool.ntp.org
         timedatectl_timezone: UTC
+      tags: [ time, date, ntp ]
+
+    - role: thorian93.journald
+      become: true
+      tags: [ journald, systemd, storage, persistent ]
