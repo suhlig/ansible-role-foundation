@@ -4,11 +4,11 @@ collections:
   - ansible.posix
 
 galaxy_info:
-  role_name: suhlig.basement
+  role_name: basement
   description: Adds basic configuration (the basement)
   author: Steffen Uhlig
   license: MIT
-  min_ansible_version: 2.6
+  min_ansible_version: "2.6"
   platforms:
     - name: Debian
       versions:
