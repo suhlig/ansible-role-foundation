@@ -1,3 +1,14 @@
+- name: apt key for yq is present
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: CC86BB64
+  tags: [ apt, gpg, key ]
+
+- name: yq PPA is available
+  apt_repository:
+    repo:  ppa:rmescandon/yq
+  tags: [ apt, ppa, yq ]
+
 - name: Software is installed
   apt:
     update_cache: yes
@@ -6,11 +17,13 @@
       - aptitude # required for upgrade mode 'full'
       - git
       - htop
+      - jq
       - software-properties-common
       - stow
       - sudo
       - tmux
       - vim
+      - yq
       - zsh
   tags: apt, software
 
