@@ -8,11 +8,12 @@
       - gpg # required for apt_key
       - htop
       - jq
+      - neovim
+      - ripgrep
       - software-properties-common
       - stow
       - sudo
       - tmux
-      - neovim
       - zsh
   tags: [apt, software]
 - name: apt key for yq is present
