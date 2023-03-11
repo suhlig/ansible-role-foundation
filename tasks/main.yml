@@ -88,6 +88,7 @@
   with_items:
     - ~/.profile
     - ~/.bashrc
+    - ~/.zshrc
   become: false
   tags: [dotfiles, profile]
 - name: dotfiles are stowed
