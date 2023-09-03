@@ -82,3 +82,11 @@
     chdir: ~/.dotfiles
   become: false
   tags: [dotfiles, stow]
+- name: Check for atuin
+  command: command -v atuin >/dev/null 2>&1
+  register: atuin_present
+  no_log: true
+  ignore_errors: yes
+- name: Atuin is present
+  shell: curl -sL https://raw.githubusercontent.com/ellie/atuin/main/install.sh | bash -
+  when: atuin_present.rc != 0
