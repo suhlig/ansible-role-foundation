@@ -5,7 +5,6 @@
       - apt-transport-https
       - aptitude # required for upgrade mode 'full'
       - git
-      - gpg # required for apt_key
       - htop
       - jq
       - neovim
@@ -16,21 +15,6 @@
       - tmux
       - zsh
   tags: [apt, software]
-- name: apt key for yq is present
-  apt_key:
-    keyserver: keyserver.ubuntu.com
-    id: CC86BB64
-  tags: [apt, gpg, key]
-- name: yq PPA is available
-  apt_repository:
-    repo: ppa:rmescandon/yq
-  tags: [apt, ppa, yq]
-- name: yq is installed
-  apt:
-    update_cache: yes
-    name:
-      - yq
-  tags: [apt, software, yq]
 - name: Software is fully upgraded
   apt:
     upgrade: full
@@ -40,7 +24,7 @@
     name: en_US.UTF-8
     state: present
   tags: [l10n, i18n, locale]
-- name: User exists
+- name: User exists and prefers zsh
   user:
     name: suhlig
     comment: Steffen Uhlig
