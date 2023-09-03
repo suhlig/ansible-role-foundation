@@ -1,11 +1,11 @@
 ---
-- name: Sample playbook to deploy suhlig.basement
+- name: Sample playbook to deploy suhlig.foundation
   hosts: all
 
   roles:
-    - role: suhlig.basement
+    - role: suhlig.foundation
       become: true
-      tags: [ suhlig, bootstrap, basement ]
+      tags: [ suhlig, bootstrap, foundation ]
 
     - role: jnv.unattended-upgrades
       become: true

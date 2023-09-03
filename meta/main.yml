@@ -4,8 +4,8 @@ collections:
   - ansible.posix
 
 galaxy_info:
-  role_name: basement
-  description: Adds basic configuration (the basement)
+  role_name: foundation
+  description: Adds basic configuration (the foundation)
   author: Steffen Uhlig
   license: MIT
   min_ansible_version: "2.6"
