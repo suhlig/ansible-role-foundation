@@ -1,8 +1,9 @@
-dependencies: []
-
+dependencies:
+  - role: jnv.unattended-upgrades
+  - role: ypsman.timedatectl
+  - role: thorian93.journald
 collections:
   - ansible.posix
-
 galaxy_info:
   role_name: foundation
   description: Adds basic configuration (the foundation)
@@ -12,7 +13,7 @@ galaxy_info:
   platforms:
     - name: Debian
       versions:
-      - all
+        - all
     - name: Ubuntu
       versions:
-      - all
+        - all
