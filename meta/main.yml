@@ -1,7 +1,4 @@
-dependencies:
-  - role: jnv.unattended-upgrades
-  - role: ypsman.timedatectl
-  - role: thorian93.journald
+dependencies: []
 galaxy_info:
   role_name: foundation
   description: Adds basic configuration (the foundation)
