@@ -86,3 +86,48 @@
   become: true
   become_user: suhlig
   tags: [dotfiles, stow]
+- name: oh-my-zsh autoupdate plugin is cloned and up-to-date
+  git:
+    repo: https://github.com/TamCore/autoupdate-oh-my-zsh-plugins
+    dest: ~/.oh-my-zsh/custom/plugins/autoupdate
+  environment:
+    GIT_CONFIG_GLOBAL: /dev/null
+  become: true
+  become_user: suhlig
+  tags: [git, dotfiles, ohmyzsh, plugin]
+- name: zsh-vi-mode plugin is cloned and up-to-date
+  git:
+    repo: https://github.com/jeffreytse/zsh-vi-mode
+    dest: ~/.oh-my-zsh/custom/plugins/zsh-vi-mode
+  environment:
+    GIT_CONFIG_GLOBAL: /dev/null
+  become: true
+  become_user: suhlig
+  tags: [git, dotfiles, ohmyzsh, plugin]
+- name: zsh-syntax-highlighting plugin is cloned and up-to-date
+  git:
+    repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
+    dest: ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+  environment:
+    GIT_CONFIG_GLOBAL: /dev/null
+  become: true
+  become_user: suhlig
+  tags: [git, dotfiles, ohmyzsh, plugin]
+- name: zsh-autosuggestions plugin is cloned and up-to-date
+  git:
+    repo: https://github.com/zsh-users/zsh-autosuggestions
+    dest: ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+  environment:
+    GIT_CONFIG_GLOBAL: /dev/null
+  become: true
+  become_user: suhlig
+  tags: [git, dotfiles, ohmyzsh, plugin]
+- name: tmux tpm plugin is cloned and up-to-date
+  git:
+    repo: https://github.com/tmux-plugins/tpm
+    dest: ~/.tmux/plugins/tpm
+  environment:
+    GIT_CONFIG_GLOBAL: /dev/null
+  become: true
+  become_user: suhlig
+  tags: [git, dotfiles, ohmyzsh, plugin]
