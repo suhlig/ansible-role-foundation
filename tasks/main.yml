@@ -56,7 +56,8 @@
     dest: ~/.oh-my-zsh
   environment:
     GIT_CONFIG_GLOBAL: /dev/null # prevent use of "git.insteadof https" from global config
-  become: false
+  become: true
+  become_user: suhlig
   tags: git, dotfiles, ohmyzsh
 - name: dotfiles repo is cloned and up-to-date
   git:
@@ -64,7 +65,8 @@
     dest: ~/.dotfiles
   environment:
     GIT_CONFIG_GLOBAL: /dev/null
-  become: false
+  become: true
+  become_user: suhlig
   tags: [git, dotfiles]
 - name: Unwanted default dotfiles are not present
   file:
@@ -74,13 +76,15 @@
     - ~/.profile
     - ~/.bashrc
     - ~/.zshrc
-  become: false
+  become: true
+  become_user: suhlig
   tags: [dotfiles, profile]
 - name: dotfiles are stowed
   command: stow common linux
   args:
     chdir: ~/.dotfiles
-  become: false
+  become: true
+  become_user: suhlig
   tags: [dotfiles, stow]
 - name: Check for atuin
   command: command -v atuin >/dev/null 2>&1
