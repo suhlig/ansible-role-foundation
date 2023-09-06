@@ -14,9 +14,9 @@ dependencies:
         - 1.debian.pool.ntp.org
       timedatectl_timezone: UTC
     tags: [ time, date, ntp ]
-  - role: thorian93.journald
-    become: true
-    tags: [ journald, systemd, storage, persistent ]
+  # - role: thorian93.journald
+  #   become: true
+  #   tags: [ journald, systemd, storage, persistent ]
 galaxy_info:
   role_name: foundation
   description: Adds basic configuration (the foundation)
